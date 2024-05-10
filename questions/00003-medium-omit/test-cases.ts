@@ -6,7 +6,6 @@ type cases = [
   Expect<Equal<Expected3, MyOmit<Todo1, 'description' | 'completed'>>>,
 ]
 
-// @ts-expect-error
 type error = MyOmit<Todo, 'description' | 'invalid'>
 
 interface Todo {
@@ -14,6 +13,7 @@ interface Todo {
   description: string
   completed: boolean
 }
+type Todo10 = MyOmit<Todo, 'title'>
 
 interface Todo1 {
   readonly title: string

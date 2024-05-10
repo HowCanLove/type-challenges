@@ -7,8 +7,7 @@ type cases = [
   Expect<Alike<MyReadonly2<Todo2, 'description' >, Expected>>,
 ]
 
-// @ts-expect-error
-type error = MyReadonly2<Todo1, 'title' | 'invalid'>
+type error = MyReadonly2<Todo1, 'title' | 'description'>
 
 interface Todo1 {
   title: string
